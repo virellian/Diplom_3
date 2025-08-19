@@ -31,7 +31,7 @@ class TestConstructorPage:
             order_feed_page = OrderFeedPage(driver)
             order_feed_page.wait_for_total_all_time_title()
         with allure.step('Проверка, что текущий Url совпадает с Url главной страницы'):
-            assert order_feed_page.get_current_url() == Url.ORDER_FEED_PAGE, f'Текущий Url не совпадает с Url страницы ленты заказов'
+            assert order_feed_page.get_current_url() == f'{Url.BASE_URL}{Url.ORDER_FEED_PAGE}', f'Текущий Url не совпадает с Url страницы ленты заказов'
 
 
     @allure.title('При клике на ингредиент появляется всплывающее окно с деталями')
